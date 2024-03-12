@@ -1,0 +1,126 @@
+/* Variáveis de cores */
+:root {
+  --cor-primaria: #3498db; /* Azul */
+  --cor-secundaria: #2c3e50; /* Azul Escuro */
+  --cor-texto: #ecf0f1; /* Branco Quase */
+  --cor-fundo: #34495e; /* Azul mais Escuro */
+  --cor-botao: #e74c3c; /* Vermelho */
+  --cor-botao-texto: #ecf0f1; /* Branco Quase */
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+.botao-direita {
+  display: block;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 20px;
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-direita:hover {
+  background-color: darken(var(--cor-botao), 10%);
+}
+
+form {
+  background-color: var(--cor-secundaria);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--cor-primaria);
+  background-color: #fff;
+  color: #333;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: darken(var(--cor-primaria), 10%);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: var(--cor-secundaria);
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+}
+
+li button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: darken(var(--cor-botao), 10%);
+}
+h1 {
+  text-align: center;
+  color: var(--cor-texto); /* Utiliza a variável de cor definida anteriormente */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.calcular_rota {
+  display: flex; /* Use flexbox for the layout */
+  align-items: center; /* Align items vertically in the center */
+  margin: 20px; /* Add some margin around the div */
+}
+
+.calcular_rota button {
+  padding: 10px 20px; /* Add some padding to the button */
+  font-size: 16px; /* Increase the font size */
+  color: white; /* Set the text color */
+  background-color: #007bff; /* Set the background color */
+  border: none; /* Remove the border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.calcular_rota button:hover {
+  background-color: #0056b3; /* Darken the button slightly on hover */
+}
