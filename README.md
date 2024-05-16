@@ -17,10 +17,9 @@ Este projeto é uma aplicação web desenvolvida com React que permite aos usuá
 # Banco de Dados
 
  - Para Utilizar o banco de dados copie e cole o sql o db está registrado no postgresql 
- - O banco de dados é o "clientes" e a tabela é "cliente"
- - O banco de dados está registrado no postgresql
+  - O banco de dados está registrado no postgresql
  
-  `` SQL
+  ``` SQL
   CREATE TABLE clientes (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -30,7 +29,7 @@ Este projeto é uma aplicação web desenvolvida com React que permite aos usuá
     cidade VARCHAR(255),
     estado VARCHAR(100)
 );
-``
+```
 
 ## Tecnologias Utilizadas
 
