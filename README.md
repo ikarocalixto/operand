@@ -71,7 +71,9 @@ Antes de iniciar, você precisará ter instalado em sua máquina as seguintes fe
 Para instalar e executar o projeto localmente, siga estes passos:
 
 1. Clone o repositório:
-
+```
+   https://github.com/ikarocalixto/operand.git
+```
 
 
 - Navegue até o diretório do projeto:
