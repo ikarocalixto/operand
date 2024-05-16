@@ -1,6 +1,6 @@
 /* Variáveis de cores */
 :root {
-  --cor-primaria: #3498db; /* Azul */
+  --cor-primaria: #292929; /* Azul */
   --cor-secundaria: #2c3e50; /* Azul Escuro */
   --cor-texto: #ecf0f1; /* Branco Quase */
   --cor-fundo: #34495e; /* Azul mais Escuro */
@@ -44,6 +44,7 @@ form {
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
+  width: 600px;
 }
 
 input[type="text"],
@@ -123,4 +124,70 @@ h1 {
 
 .calcular_rota button:hover {
   background-color: #0056b3; /* Darken the button slightly on hover */
+}
+
+#cadastro-concluido {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #0b0b0b;
+}
+
+/*  css do botao editar e excluir*/
+.icon-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.icon-button img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.icon-button:hover img {
+  transform: scale(1.1);
+}
+
+.edit-button img {
+  filter: sepia(20%) saturate(2000%) hue-rotate(180deg) brightness(90%);
+}
+
+.delete-button img {
+  filter: sepia(20%) saturate(2000%) hue-rotate(0deg) brightness(80%);
+}
+.icon-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px;
+  color: #ffffff; /* Cor básica dos ícones */
+}
+
+.icon-button:hover {
+  color: #0056b3; /* Cor quando o mouse passa sobre o ícone */
+  transform: scale(1.1);
+  transition: transform 0.3s ease, color 0.3s ease;
 }

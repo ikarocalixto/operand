@@ -1,3 +1,6 @@
+
+
+
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
@@ -23,13 +26,13 @@ app.get('/clientes', async (req, res) => {
 });
 
 
-// adicionar clientes 
+// adicionar clientes
 app.post('/clientes', async (req, res) => {
-  const { nome, email, telefone, latitude, longitude } = req.body;
+  const { nome, email, telefone, latitude, longitude, rua, cidade, estado } = req.body;
 
   try {
-    const query = 'INSERT INTO clientes (nome, email, telefone, latitude, longitude) VALUES ($1, $2, $3, $4, $5) RETURNING *';
-    const values = [nome, email, telefone, latitude, longitude];
+    const query = 'INSERT INTO clientes (nome, email, telefone, latitude, longitude, rua, cidade, estado) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
+    const values = [nome, email, telefone, latitude, longitude, rua, cidade, estado];
     const novoCliente = await pool.query(query, values);
 
     res.status(201).json(novoCliente.rows[0]);
@@ -39,24 +42,18 @@ app.post('/clientes', async (req, res) => {
   }
 });
 
-// rotas GET, PUT, DELETE 
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
-
-
- // atualizar clientes, incluindo latitude e longitude
+// atualizar clientes
 app.put('/clientes/:id', async (req, res) => {
   const { id } = req.params;
-  const { nome, email, telefone, latitude, longitude } = req.body;
+  const { nome, email, telefone, latitude, longitude, rua, cidade, estado } = req.body;
 
   try {
     const query = `
       UPDATE clientes 
-      SET nome = $1, email = $2, telefone = $3, latitude = $4, longitude = $5 
-      WHERE id = $6 
+      SET nome = $1, email = $2, telefone = $3, latitude = $4, longitude = $5, rua = $6, cidade = $7, estado = $8
+      WHERE id = $9 
       RETURNING *`;
-    const values = [nome, email, telefone, latitude, longitude, id];
+    const values = [nome, email, telefone, latitude, longitude, rua, cidade, estado, id];
     const { rows } = await pool.query(query, values);
 
     if (rows.length === 0) {
@@ -68,6 +65,12 @@ app.put('/clientes/:id', async (req, res) => {
     console.error("Erro ao atualizar cliente:", error);
     res.status(500).send("Erro ao atualizar cliente");
   }
+});
+
+
+// rotas GET, PUT, DELETE 
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
 
 
