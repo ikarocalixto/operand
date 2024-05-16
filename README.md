@@ -1,18 +1,44 @@
-# Projeto de Gerenciamento de Clientes com React
+# Gerenciamento de Clientes com React
 
-Este projeto é uma aplicação web desenvolvida com React que permite aos usuários adicionar, visualizar, editar e deletar informações de clientes. A aplicação integra-se com uma API de backend para realizar operações CRUD (Create, Read, Update, Delete) sobre os dados dos clientes. Além disso, a aplicação tem capacidade de obter coordenadas geográficas através de endereços via a API do Google Maps.
+Este projeto é uma aplicação web desenvolvida com React que permite aos usuários gerenciar informações de clientes através de operações CRUD (Create, Read, Update, Delete). A aplicação se integra a uma API de backend para realizar essas operações sobre os dados dos clientes. Além das funcionalidades básicas de CRUD, a aplicação também oferece a capacidade de obter coordenadas geográficas e informações de endereço de forma automática utilizando a API do Google Maps.
+
+## Funcionalidades Principais
+
+- **Adicionar Clientes**: Permite ao usuário adicionar novos clientes preenchendo um formulário com informações como nome, email, telefone, CEP, rua, cidade e estado.
+- **Visualizar Clientes**: Exibe uma lista de todos os clientes cadastrados, permitindo a pesquisa pelo nome.
+- **Editar Clientes**: Permite ao usuário editar as informações de clientes existentes.
+- **Deletar Clientes**: Permite ao usuário deletar clientes da lista.
+
+## Funcionalidades Extras
+
+- **Preenchimento Automático de Endereço**: Quando o usuário digita o CEP, a aplicação automaticamente busca e preenche os campos de endereço (rua, cidade e estado) usando a API do Google Maps. Isso melhora a experiência do usuário e garante a precisão das informações de endereço.
+
+### Demonstração da Aplicação
+![Demonstração da Aplicação](./client/images/demo.gif)
+
+## Tecnologias Utilizadas
+
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Axios**: Cliente HTTP baseado em promessas para fazer requisições à API de backend.
+- **API do Google Maps**: Utilizada para obter informações de endereço a partir do CEP.
+- **CSS**: Usado para estilização da aplicação.
 
 
-## Funcionalidades
 
-- **Listar clientes**: Exibe todos os clientes cadastrados.
-- **Adicionar cliente**: Permite o cadastro de novos clientes, incluindo nome, email, telefone, e endereço.
-- **Editar cliente**: Permite editar as informações de um cliente existente.
-- **Deletar cliente**: Remove um cliente cadastrado.
-- **Buscar por nome**: Filtra os clientes exibidos com base em um termo de pesquisa.
-- **Calcular rota**: Ordena os clientes com base na proximidade a um ponto de referência definido (0,0).
-- **Obter coordenadas**: Converte endereços em coordenadas geográficas usando a API do Google Maps.
-- **Buscar endereço por coordenadas**: Retorna o endereço completo baseado em coordenadas geográficas.
+## Estrutura do Projeto
+
+**/src**
+- **/components**
+  - **ClienteForm.js**: Componente de formulário para adicionar e editar clientes.
+  - **ClienteList.js**: Componente que exibe a lista de clientes.
+- **/hooks**
+  - **useClientes.js**: Hook personalizado para gerenciar o estado e as operações relacionadas aos clientes.
+- **/services**
+  - **api.js**: Módulo que contém funções para interagir com a API de backend e a API do Google Maps.
+- **App.js**: Componente principal que integra todos os outros componentes.
+- **App.css**: Arquivo de estilos para a aplicação.
+- **index.js**: Ponto de entrada principal da aplicação.
+
 
 # Banco de Dados
 
@@ -31,11 +57,7 @@ Este projeto é uma aplicação web desenvolvida com React que permite aos usuá
 );
 ```
 
-## Tecnologias Utilizadas
 
-- **React.js**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **Axios**: Cliente HTTP baseado em promessas para o navegador e node.js, utilizado para fazer requisições à API.
-- **CSS**: Para estilização dos componentes.
 
 ## Pré-requisitos
 
