@@ -49,20 +49,25 @@ Antes de iniciar, você precisará ter instalado em sua máquina as seguintes fe
 Para instalar e executar o projeto localmente, siga estes passos:
 
 1. Clone o repositório:
-```bash
-git clone https://seu-repositorio-aqui.com/projeto.git
 
 
-Navegue até o diretório do projeto:
+
+- Navegue até o diretório do projeto:
+bash
+```Copy code
+cd operand-cep
+```
+- Instale as dependências:
 bash
 Copy code
-cd projeto
-Instale as dependências:
-bash
-Copy code
+```
 npm install
+```
 Inicie a aplicação:
 bash
 Copy code
+```
 npm start
+```
+
 A aplicação estará disponível em http://localhost:3000.
